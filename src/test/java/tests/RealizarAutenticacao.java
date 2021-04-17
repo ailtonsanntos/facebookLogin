@@ -31,9 +31,9 @@ public class RealizarAutenticacao {
 	@Quando("preencho o campo {string} e {string} válidos")
 	public void preencho_o_campo_e_válidos(String email, String senha) {
 	    
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("as0390956@gmail.com");
+		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("");
 		
-		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("%Barth16%");
+		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("");
 		
 		driver.findElement(By.xpath("//*[@id=\"loginbutton\"]")).click();
 	}
