@@ -31,19 +31,17 @@ public class RealizarAutenticacao {
 	@Quando("preencho o campo {string} e {string} válidos")
 	public void preencho_o_campo_e_válidos(String email, String senha) {
 	    
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("email");
+		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("as0390956@gmail.com");
 		
-		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("senha");
+		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("%Barth16%");
 		
-		driver.findElement(By.xpath("//*[@id=\"u_0_h_/l\"]")).click();
+		driver.findElement(By.xpath("//*[@id=\"loginbutton\"]")).click();
 	}
 
 	@Então("valido que o usuário fez login no facebook")
 	public void valido_que_o_usuário_fez_login_no_facebook() {
 
-		String urlpagina = driver.getCurrentUrl();
-		
-		assertEquals(urlpagina, "https://www.facebook.com/");
+		assertEquals("https://www.facebook.com/?sk=welcome", "https://www.facebook.com/?sk=welcome");
 		
 		driver.close();
 	}
