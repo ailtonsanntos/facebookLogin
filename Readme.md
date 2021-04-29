@@ -2,30 +2,34 @@
 
 Versão 1.0 
 
--Criação do Projeto Login Facebook
+- Criação do Projeto Login Facebook
 
--Criação e configuração do arquivo pom
+- Criação e configuração do arquivo pom
 
 	- Cucumber 6.9.1
 	- Selenium 3.141.59
 	- Hamcrest 2.2
 
--Criaçao do primeiro cenário
+- Criaçao do primeiro cenário
 
--Subida do Projeto no GitHub
+- Subida do Projeto no GitHub
 
 Versão 1.1
 
--Gerando a massa fake para realização do primeiro cenário
+- Gerando a massa fake para realização do primeiro cenário
 
--Execução e validação do primeiro cenário
+- Execução e validação do primeiro cenário
 
 Versão 1.2
 
 - Foi retirado a massa fake
 
+Versão 1.3
+
+-  Incluido o Screenshot no primeiro cenário
+
 
 ***Próximos passos***
 
 - Criação e validação dos outros cenários
-- Relatório e Screenshot
+- Relatório

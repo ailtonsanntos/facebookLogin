@@ -2,13 +2,22 @@ package tests;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
+
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
+import io.cucumber.messages.internal.com.google.common.io.Files;
+
+
 
 public class RealizarAutenticacao {
 	
@@ -31,7 +40,7 @@ public class RealizarAutenticacao {
 	@Quando("preencho o campo {string} e {string} válidos")
 	public void preencho_o_campo_e_válidos(String email, String senha) {
 	    
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("");
+		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("as0390956@gmail.com");
 		
 		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("");
 		
@@ -43,13 +52,25 @@ public class RealizarAutenticacao {
 
 		assertEquals("https://www.facebook.com/?sk=welcome", "https://www.facebook.com/?sk=welcome");
 		
+		try {
+			//gerando a evidência do teste
+			File evidencia = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			Files.copy(evidencia, new File("Evidências/Validação de campos obrigatorios no cadastro do funcionario.png"));
+					//+ "c:\\Testes2\\Validação de campos obrigatorios no cadastro do funcionario.png"));
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
 		driver.close();
+		
 	}
 
 	@Quando("preencho o campo <email> e <senha> que não estão cadastado")
 	public void preencho_o_campo_email_e_senha_que_não_estão_cadastado() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
+	  
 	}
 
 	@Então("exibe a mensagem O email que você inseriu não está conectado a uma conta. Encontre sua conta e entre.")
@@ -62,12 +83,14 @@ public class RealizarAutenticacao {
 	    //
 	    // For other transformations you can register a DataTableType.
 	    throw new io.cucumber.java.PendingException();
+	 
 	}
 
 	@Quando("preencho o campo <email> válido e <senha> inválida")
 	public void preencho_o_campo_email_válido_e_senha_inválida() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
+	
 	}
 
 	@Então("exibe a mensagem {string}")
